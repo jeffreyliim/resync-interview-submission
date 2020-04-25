@@ -1,7 +1,7 @@
 var {DataTypes} = require('sequelize');
 var sequelize = require('../database/sequelize');
 
-const CountryDetail = sequelize.getSequelize().define('CountryDetail', {
+var CountryDetail = sequelize.getSequelize().define('countryDetail', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

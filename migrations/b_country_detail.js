@@ -2,7 +2,7 @@ module.exports = {
     up: async function (queryInterface, Sequelize) {
         return new Promise(resolve => {
             queryInterface.createTable(
-                'CountryDetails',
+                'countryDetails',
                 {
                     id: {
                         type: Sequelize.INTEGER,
@@ -10,7 +10,7 @@ module.exports = {
                         autoIncrement: true
                     },
                     name: Sequelize.STRING,
-                    gmtOffset: Sequelize.INTEGER,
+                    gmtOffset: Sequelize.STRING,
                     createdAt: {
                         type: Sequelize.DATE
                     },

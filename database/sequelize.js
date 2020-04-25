@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var config = require('../config/config');
 
-const mysql_conf = config.development;
+var mysql_conf = config.development;
 mysql_conf['dialect'] = 'mysql';
 
 class SequelizeDB {

@@ -2,7 +2,7 @@ module.exports = {
     up: async function (queryInterface, Sequelize) {
         return new Promise(resolve => {
             queryInterface.createTable(
-                'UserTokens',
+                'userTokens',
                 {
                     id: {
                         type: Sequelize.INTEGER,
@@ -12,7 +12,7 @@ module.exports = {
                     userId: {
                         type: Sequelize.INTEGER,
                         references: {
-                            model: 'Users',
+                            model: 'users',
                             key: 'id'
                         },
                         onUpdate: 'cascade',

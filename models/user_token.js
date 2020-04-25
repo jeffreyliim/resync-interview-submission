@@ -1,13 +1,16 @@
 var {DataTypes} = require('sequelize');
 var sequelize = require('../database/sequelize');
 
-const UserToken = sequelize.getSequelize().define('UserToken', {
+var UserToken = sequelize.getSequelize().define('userToken', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
     },
     userId: {
         type: DataTypes.INTEGER,
+    },
+    token: {
+        type: DataTypes.STRING
     },
     expiresIn: {
         type: DataTypes.DATE,

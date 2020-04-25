@@ -1,47 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var {User} = require('../models/user');
+var {validateCredentials, validateAndCheckExisting, authenticate} = require('../middleware/auth');
+var RegisterController = require("../controllers/registerController");
+var LoginController = require('../controllers/loginController');
+var CountryController = require('../controllers/countryController');
 
 router.get('/', function (req, res, next) {
-    var request = {
-        email: 'jeffrey',
-        password: 'asd'
-    };
-    User.create(request);
-    res.json()
+    return res.json({health_check: 'good'})
 });
 
-router.post('/register', function (req, res, next) {
-//username and pw
-});
-
-router.post('/login', function (req, res, next) {
-//username and pw access token up to 5 mins
-});
-
-router.post('/getAllCountryDetail', function (req, res, next) {
-    /**
-     * {
-     *     token:
-     *     countries:[]
-     * }
-     *
-     * */
-
-});
-
-router.post('/getCountryDetail', function (req, res, next) {
-    /** req: name
-     * {
-     *     token:
-     *     country:{}
-     * }
-     *
-     * */
-});
-
-router.post('/refreshToken', function (req, res, next) {
-//username and pw access token up to 5 mins
-});
+router.post('/register', validateAndCheckExisting, RegisterController.Register);
+router.post('/login', validateCredentials, LoginController.Login);
+router.post('/refreshToken', LoginController.RefreshToken);
+router.post('/getAllCountryDetail', authenticate, CountryController.GetAllCountries);
+router.post('/getCountryDetail', authenticate, CountryController.GetCountry);
 
 module.exports = router;

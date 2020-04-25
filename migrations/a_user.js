@@ -2,7 +2,7 @@ module.exports = {
     up: async function (queryInterface, Sequelize) {
         return new Promise(resolve => {
             queryInterface.createTable(
-                'Users',
+                'users',
                 {
                     id: {
                         type: Sequelize.INTEGER,

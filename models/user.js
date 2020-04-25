@@ -2,7 +2,7 @@ var {UserToken} = require('./user_token');
 var {DataTypes} = require('sequelize');
 var sequelize = require('../database/sequelize');
 
-const User = sequelize.getSequelize().define('User', {
+var User = sequelize.getSequelize().define('user', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -20,7 +20,7 @@ const User = sequelize.getSequelize().define('User', {
     timestamps: true
 });
 
-User.hasMany(UserToken);
+User.hasOne(UserToken);
 UserToken.belongsTo(User);
 
 module.exports = {

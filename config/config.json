@@ -4,7 +4,12 @@
     "password": "password",
     "database": "resync",
     "host": "mysql",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "public_key": "public.pem",
+    "private_key": "private.pem",
+    "jwtKey": "YSByYW5kb20gc3RyaW5n",
+    "expiresIn": 3000,
+    "algorithm": "RS256"
   },
   "test": {
     "username": "root",
