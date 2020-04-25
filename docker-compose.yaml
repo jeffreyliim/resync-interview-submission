@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'resync'
+      MYSQL_USER: 'resync'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      MYSQL_PASSWORD: 'password'
+    ports:
+      - 127.0.0.1:3306:3306
+  app:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - 127.0.0.1:3000:3000
+    depends_on:
+    - "mysql"
+    command: ["./wait-for-it.sh", "db:3306", "--", "npm", "start"]
