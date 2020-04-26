@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 
 var {
     public_key, private_key,
-    jwtKey, expiresIn, algorithm
+    jwtKey, expiresIn
 } = config.development;
 
 exports.encryptPassword = function (text) {
@@ -24,7 +24,6 @@ exports.decryptPassword = function (hash) {
 
 exports.generateJwt = function (email) {
     return jwt.sign({username: email}, jwtKey, {
-        // algorithm,
         expiresIn,
     });
 };

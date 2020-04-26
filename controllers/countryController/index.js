@@ -1,6 +1,6 @@
 var {successResponse} = require('../../utils/response');
 var {CountryDetail} = require('../../models/country_detail');
-
+var {validationResult} = require('express-validator')
 
 module.exports = {
     GetAllCountries: async function (req, res) {
