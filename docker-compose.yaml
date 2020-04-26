@@ -11,6 +11,7 @@ services:
     ports:
       - 127.0.0.1:3306:3306
   app:
+    image: node:latest
     build: .
     volumes:
       - .:/code
