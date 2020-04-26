@@ -26,4 +26,9 @@ $ npm run sequelize db:seed:all
 "password":"qweasd123!"
 ```
 
+### Import postman
+```shell
+https://www.getpostman.com/collections/53233a066a4e8d728b06
+```
+
 
