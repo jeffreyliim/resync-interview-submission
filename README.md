@@ -1,6 +1,6 @@
 # resync-interview-submission
 ### Requirements
-- Make sure you have docker, MySQL and NodeJS installed 
+- Make sure you have Docker and NodeJS installed 
 
 ### Project setup 
 ```shell
@@ -11,17 +11,17 @@ $ npm install
 $ docker-compose up
 
 
-####  you should see the following logs after init ###
+####  you should see the following logs after init ####
 
-app_1    | [nodemon] 2.0.3
-app_1    | [nodemon] to restart at any time, enter `rs`
-app_1    | [nodemon] watching path(s): *.*
-app_1    | [nodemon] watching extensions: js,mjs,json
-app_1    | [nodemon] starting `node ./bin/www`
-app_1    | Executing (default): SELECT 1+1 AS result
-app_1    | MySQL connection has been established successfully.
+workspace_1  | [nodemon] 2.0.3
+workspace_1  | [nodemon] to restart at any time, enter `rs`
+workspace_1  | [nodemon] watching path(s): *.*
+workspace_1  | [nodemon] watching extensions: js,mjs,json
+workspace_1  | [nodemon] starting `node ./bin/www`
+workspace_1  | Executing (default): SELECT 1+1 AS result
+workspace_1  | MySQL connection has been established successfully.
 
-### open another terminal session ###
+#### open another terminal session ####
 
 $ curl localhost:3000
 
