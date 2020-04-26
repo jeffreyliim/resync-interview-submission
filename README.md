@@ -9,6 +9,23 @@ $ cd /path/to/resync-interview-submission
 $ npm install 
 
 $ docker-compose up
+
+
+####  you should see the following logs after init ###
+
+app_1    | [nodemon] 2.0.3
+app_1    | [nodemon] to restart at any time, enter `rs`
+app_1    | [nodemon] watching path(s): *.*
+app_1    | [nodemon] watching extensions: js,mjs,json
+app_1    | [nodemon] starting `node ./bin/www`
+app_1    | Executing (default): SELECT 1+1 AS result
+app_1    | MySQL connection has been established successfully.
+
+### open another terminal session ###
+
+$ curl localhost:3000
+
+{"health_check":"good"}
 ```
 #### Database migation and seeding
 - Go to `resync-interview-submission/config/config.json` change `host` to `localhost`
