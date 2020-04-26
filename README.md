@@ -28,13 +28,13 @@ $ curl localhost:3000
 {"health_check":"good"}
 ```
 #### Database migation and seeding
-- Go to `resync-interview-submission/config/config.json` change `host` to `localhost`
+- Go to `resync-interview-submission/config/config.json` change `development.host` to `localhost`
 ```shell
 $ npm run sequelize db:migrate
 
 $ npm run sequelize db:seed:all
 ```
-- Go back to `resync-interview-submission/config/config.json` change `host` to `mysql`
+- Go back to `resync-interview-submission/config/config.json` change back `development.host` to `mysql`
 
 ### Sample login credentials
 ```shell
