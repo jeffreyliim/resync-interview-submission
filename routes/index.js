@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var {authenticate} = require('../middleware/auth');
-var {countryRequestRules} = require('../controllers/countryController/requestRules');
+var {countryRequestRules, allCountryRequestRules} = require('../controllers/countryController/requestRules');
 var {refreshTokenRequestRules, loginRequestRules} = require('../controllers/loginController/requestRules');
 var {registerRules} = require('../controllers/registerController/requestRules');
 var {requestValidator} = require('../middleware/request');
@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 router.post('/register', registerRules, requestValidator, RegisterController.Register);
 router.post('/login', loginRequestRules, requestValidator, LoginController.Login);
 router.post('/refreshToken', refreshTokenRequestRules, requestValidator, LoginController.RefreshToken);
-router.post('/getAllCountryDetail', countryRequestRules, requestValidator, authenticate, CountryController.GetAllCountries);
 router.post('/getCountryDetail', countryRequestRules, requestValidator, authenticate, CountryController.GetCountry);
+router.post('/getAllCountryDetail', allCountryRequestRules, requestValidator, authenticate, CountryController.GetAllCountries);
 
 module.exports = router;

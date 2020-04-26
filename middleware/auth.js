@@ -15,7 +15,7 @@ module.exports = {
 
         var userToken = await UserToken.findOne({where: {token}, include: User});
         // verify if token is from the owner.
-        if (verified_token.username !== userToken.user.email) {
+        if (!userToken || verified_token.username !== userToken.user.email) {
             return res.json(errorResponse('invalid token'));
         }
 
